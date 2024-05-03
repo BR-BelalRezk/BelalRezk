@@ -1,10 +1,5 @@
-import {
-  Menu,
-  MenuList,
-  MenuListItem,
-  MenuToggleButton,
-  Hamburger,
-} from "@/exports";
+import { Menu, MenuList, MenuListItem, MenuToggleButton } from "@/exports";
+import Hamburger from "./Hamburger";
 import { navbar } from "@/constants";
 export default function MobileNav() {
   return (
