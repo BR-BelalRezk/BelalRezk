@@ -17,7 +17,7 @@ export default function Projects() {
             key={item.label}
             index={index}
             setModal={setModal}
-            className="group hover:opacity-50 duration-500 border-t border-stone-800 last-of-type:border-b"
+            className="group hover:text-stone-700 duration-500 border-t border-stone-800 last-of-type:border-b"
           >
             <Link
               href={item.demo}
@@ -54,7 +54,7 @@ export default function Projects() {
           {projects.map((item) => (
             <figure
               key={item.desc}
-              className="relative h-full flex items-center justify-center p-5 bg-stone-300"
+              className="relative h-full flex items-center justify-center p-5 bg-stone-500"
             >
               <Image
                 className="h-auto w-auto aspect-video object-cover object-center"
