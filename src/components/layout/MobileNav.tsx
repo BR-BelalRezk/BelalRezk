@@ -23,8 +23,8 @@ export default function MobileNav() {
               },
             },
             close: {
-              width: 20,
-              height: 20,
+              width: "2.5rem",
+              height: "2.5rem",
               borderRadius: 25,
               transition: {
                 duration: 0.75,
