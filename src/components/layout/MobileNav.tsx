@@ -28,8 +28,8 @@ export default function MobileNav() {
               },
             },
             close: {
-              width: 40,
-              height: 40,
+              width: 20,
+              height: 20,
               borderRadius: 25,
               transition: {
                 duration: 0.75,
