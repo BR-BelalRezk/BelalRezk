@@ -1,6 +1,6 @@
 import { Menu, MenuList, MenuListItem, MenuToggleButton } from "@/exports";
-import Hamburger from "./Hamburger";
 import { navbar } from "@/constants";
+import Hamburger from "./Hamburger";
 export default function MobileNav() {
   return (
     <div className="relative lg:hidden">
@@ -23,8 +23,8 @@ export default function MobileNav() {
               },
             },
             close: {
-              width: "2.5rem",
-              height: "2.5rem",
+              width: 40,
+              height: 40,
               borderRadius: 25,
               transition: {
                 duration: 0.75,
