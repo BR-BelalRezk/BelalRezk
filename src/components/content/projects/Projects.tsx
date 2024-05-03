@@ -17,12 +17,12 @@ export default function Projects() {
             key={item.label}
             index={index}
             setModal={setModal}
-            className="group hover:text-stone-700 duration-500 border-t border-stone-800 last-of-type:border-b"
+            className="group border-t border-stone-800 last-of-type:border-b"
           >
             <Link
               href={item.demo}
               target="_blank"
-              className="flex items-center py-10 px-5 sm:px-10 sm:py-20 justify-center flex-col gap-5 sm:gap-0 sm:justify-center sm:flex-row w-full"
+              className="group-hover:text-stone-700 duration-500 flex items-center py-10 px-5 sm:px-10 sm:py-20 justify-center flex-col gap-5 sm:gap-0 sm:justify-center sm:flex-row w-full"
             >
               <figure className="sm:hidden">
                 <Image
