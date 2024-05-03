@@ -1,5 +1,7 @@
 import dynamic from "next/dynamic";
 
+const Hamburger = dynamic(() => import("@/components/layout/Hamburger"));
+
 const Menu = dynamic(() =>
   import("@/components/layout/Menu").then((module) => module.Menu)
 );
@@ -36,6 +38,7 @@ const Projects = dynamic(
   () => import("@/components/content/projects/Projects")
 );
 export {
+  Hamburger,
   Menu,
   MenuToggleButton,
   MenuList,

@@ -1,8 +1,8 @@
 import { Menu, MenuList, MenuListItem } from "@/exports";
 import { navbar } from "@/constants";
-export default function DesktopNav({ className }: { className: string }) {
+export default function DesktopNav() {
   return (
-    <div className={className}>
+    <div className="relative hidden lg:block">
       <Menu id="desktop">
         <MenuList
           className="flex p-1.5 justify-center items-center capitalize overflow-hidden border border-stone-800 text-stone-100  gap-3  text-sm"

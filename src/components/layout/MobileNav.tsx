@@ -1,9 +1,14 @@
-import { Menu, MenuList, MenuListItem, MenuToggleButton } from "@/exports";
-import Hamburger from "./Hamburger";
+import {
+  Menu,
+  MenuList,
+  MenuListItem,
+  MenuToggleButton,
+  Hamburger,
+} from "@/exports";
 import { navbar } from "@/constants";
-export default function MobileNav({ className }: { className: string }) {
+export default function MobileNav() {
   return (
-    <div className={className}>
+    <div className="relative lg:hidden">
       <Menu id="mobile">
         <MenuToggleButton className="relative bg-stone-100 flex items-center justify-center flex-col gap-1 h-10 w-10 rounded-full z-40">
           <Hamburger />

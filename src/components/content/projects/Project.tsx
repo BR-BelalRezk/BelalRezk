@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type TModal = { active: boolean; index: number };
 type Props = {
   children: Readonly<React.ReactNode>;

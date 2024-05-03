@@ -10,8 +10,8 @@ export default function Header() {
         <Link href={"#home"} aria-label="logo">
           <Logo />
         </Link>
-        <MobileNav className="relative lg:hidden" />
-        <DesktopNav className="relative hidden lg:block" />
+        <MobileNav />
+        <DesktopNav />
       </nav>
     </header>
   );
