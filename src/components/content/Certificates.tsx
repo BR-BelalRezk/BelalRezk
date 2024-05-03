@@ -11,7 +11,7 @@ export default function Certificates() {
           key={item.label}
           className="flex items-center rounded-lg justify-center flex-col sm:flex-row border border-stone-800"
         >
-          <figure className="w-80 h-60 sm:w-96">
+          <figure className="w-72 h-60 sm:w-80 md:w-96">
             <Image
               src={item.img}
               alt={item.label}
