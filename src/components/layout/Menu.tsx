@@ -84,7 +84,6 @@ const MenuList = ({
       variants={variants}
       initial={"close"}
       animate={toggle ? "open" : "close"}
-      exit={"close"}
       className={className}
     >
       <AnimatePresence mode="wait">{toggle && children}</AnimatePresence>
@@ -119,6 +118,8 @@ const MenuListItem = ({
         },
         close: { opacity: 0, y: 25, transition: { duration: 0.5 } },
       }}
+      initial={"close"}
+      animate={"open"}
       exit={"close"}
     >
       <Link className={className} href={`#${label}`}>
