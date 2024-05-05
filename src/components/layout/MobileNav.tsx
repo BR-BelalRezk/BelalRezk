@@ -38,6 +38,7 @@ export default function MobileNav() {
           {navbar.map((item) => (
             <MenuListItem
               key={item.id}
+              layoutId={"mobile"}
               label={item.id}
               className="w-full flex items-center justify-between"
             >

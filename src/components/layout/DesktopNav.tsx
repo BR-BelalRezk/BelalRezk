@@ -32,6 +32,7 @@ export default function DesktopNav() {
           {navbar.map((item) => (
             <MenuListItem
               key={item.id}
+              layoutId={'desktop'}
               label={item.id}
               className="w-full relative px-2.5 py-1 flex items-center justify-center"
             >

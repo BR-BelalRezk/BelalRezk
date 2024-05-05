@@ -17,6 +17,7 @@ import Active from "./Active";
 type TMenuContext = {
   toggle: boolean;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
+
 };
 
 const MenuContext = createContext<TMenuContext | null | undefined>(
@@ -58,7 +59,7 @@ const MenuToggleButton = ({
   const { toggle, setToggle } = useMenu();
   return (
     <motion.button
-      animate={toggle ? { translateY: 10, translateX: -10 } : {}}
+      animate={toggle ? { translateY: 5, translateX: -5 } : {}}
       transition={{ type: "tween", duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
       className={className}
       aria-label="menu toggle button"
@@ -95,10 +96,12 @@ const MenuListItem = ({
   children,
   className,
   label,
+  layoutId
 }: {
   children: Readonly<React.ReactNode>;
   className: string;
   label: (typeof navbar)[number]["id"];
+  layoutId : 'mobile' | 'desktop'
 }) => {
   const { active, setActive } = useActiveSection();
   return (
@@ -123,7 +126,7 @@ const MenuListItem = ({
         {children}
         {active === label && (
           <Active
-            layoutId={"navbar"}
+            layoutId={layoutId}
             className="h-3 w-3 rounded-full bg-stone-500 lg:h-auto lg:w-auto lg:bg-stone-700 lg:absolute lg:inset-0 lg:-z-50"
           />
         )}
