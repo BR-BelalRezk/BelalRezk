@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 
 export default function Hamburger({ toggle }: { toggle?: boolean }) {
-  const span_1 = toggle ? { rotate: 45, translateY: 5 } : {};
-  const span_2 = toggle ? { rotate: -45, translateY: -5 } : {};
+  const span_1 = toggle ? { rotate: 45, translateY: 4 } : {};
+  const span_2 = toggle ? { rotate: -45, translateY: -4 } : {};
   return (
     <>
       {Array.from({ length: 2 }, (_, index) => index).map((index) => (

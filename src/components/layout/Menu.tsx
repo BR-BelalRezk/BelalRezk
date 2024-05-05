@@ -58,13 +58,15 @@ const MenuToggleButton = ({
 }) => {
   const { toggle, setToggle } = useMenu();
   return (
-    <button
+    <motion.button
+      animate={toggle ? { translateY: 10, translateX: -10 } : {}}
+      transition={{ type: "tween", ease: [0.76, 0, 0.24, 1] }}
       className={className}
       aria-label="menu toggle button"
       onClick={() => setToggle((prevState) => !prevState)}
     >
       {cloneElement(children, { toggle })}
-    </button>
+    </motion.button>
   );
 };
 

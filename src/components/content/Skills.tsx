@@ -6,7 +6,7 @@ export default function Skills() {
       {skills.map((item) => (
         <li
           key={item.label}
-          className="group flex items-center relative justify-center border border-stone-800 h-60 p-5"
+          className="group flex items-center relative justify-center border border-stone-800 p-5"
         >
           <h3 className="group-hover:opacity-0 duration-500 ">
             <item.icon className="text-9xl" />
