@@ -8,7 +8,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { Variants, motion } from "framer-motion";
+import { AnimatePresence, Variants, motion } from "framer-motion";
 import { useActiveSection } from "@/context/ActiveSection";
 import { navbar } from "@/constants";
 import Link from "next/link";
@@ -17,7 +17,6 @@ import Active from "./Active";
 type TMenuContext = {
   toggle: boolean;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
-  id: "mobile" | "desktop";
 };
 
 const MenuContext = createContext<TMenuContext | null | undefined>(
@@ -45,7 +44,7 @@ const Menu = ({
       setToggle(true);
     }
   }, [id]);
-  const value = { toggle, setToggle, id };
+  const value = { toggle, setToggle };
   return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;
 };
 
@@ -59,7 +58,7 @@ const MenuToggleButton = ({
   const { toggle, setToggle } = useMenu();
   return (
     <motion.button
-      animate={toggle ? { translateY: 12.5, translateX: -12.5 } : {}}
+      animate={toggle ? { translateY: 10, translateX: -10 } : {}}
       transition={{ type: "tween", duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
       className={className}
       aria-label="menu toggle button"
@@ -85,9 +84,10 @@ const MenuList = ({
       variants={variants}
       initial={"close"}
       animate={toggle ? "open" : "close"}
+      exit={"close"}
       className={className}
     >
-      {children}
+      <AnimatePresence mode="wait">{toggle && children}</AnimatePresence>
     </motion.ul>
   );
 };
@@ -102,7 +102,6 @@ const MenuListItem = ({
   label: (typeof navbar)[number]["id"];
 }) => {
   const { active, setActive } = useActiveSection();
-  const { id } = useMenu();
   return (
     <motion.li
       onClick={() => setActive(label)}
@@ -125,12 +124,8 @@ const MenuListItem = ({
         {children}
         {active === label && (
           <Active
-            layoutId={id}
-            className={
-              id === "mobile"
-                ? "h-3 w-3 rounded-full bg-stone-500"
-                : "bg-stone-700 rounded-full absolute inset-0 -z-50"
-            }
+            layoutId={"navbar"}
+            className="h-3 w-3 rounded-full bg-stone-500 lg:h-auto lg:w-auto lg:bg-stone-700 lg:absolute lg:inset-0 lg:-z-50"
           />
         )}
       </Link>
