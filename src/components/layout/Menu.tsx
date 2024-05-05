@@ -119,6 +119,7 @@ const MenuListItem = ({
         },
         close: { opacity: 0, y: 25, transition: { duration: 0.5 } },
       }}
+      exit={"close"}
     >
       <Link className={className} href={`#${label}`}>
         {children}
