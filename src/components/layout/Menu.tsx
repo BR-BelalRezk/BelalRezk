@@ -8,7 +8,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { AnimatePresence, Variants, motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import { useActiveSection } from "@/context/ActiveSection";
 import { navbar } from "@/constants";
 import Link from "next/link";
@@ -86,7 +86,7 @@ const MenuList = ({
       animate={toggle ? "open" : "close"}
       className={className}
     >
-      <AnimatePresence mode="wait">{toggle && children}</AnimatePresence>
+      {children}
     </motion.ul>
   );
 };
@@ -118,9 +118,6 @@ const MenuListItem = ({
         },
         close: { opacity: 0, y: 25, transition: { duration: 0.5 } },
       }}
-      initial={"close"}
-      animate={"open"}
-      exit={"close"}
     >
       <Link className={className} href={`#${label}`}>
         {children}
