@@ -5,7 +5,7 @@ export default function MobileNav() {
   return (
     <div className="relative lg:hidden">
       <Menu id="mobile">
-        <MenuToggleButton className="relative bg-stone-100 flex items-center justify-center flex-col gap-1 h-10 w-10 rounded-full z-40">
+        <MenuToggleButton className="relative flex items-center justify-center flex-col gap-1 h-10 w-10 rounded-full z-40">
           <Hamburger />
         </MenuToggleButton>
         <MenuList

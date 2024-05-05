@@ -59,7 +59,7 @@ const MenuToggleButton = ({
   const { toggle, setToggle } = useMenu();
   return (
     <motion.button
-      animate={toggle ? { translateY: 15, translateX: -15 } : {}}
+      animate={toggle ? { translateY: 12.5, translateX: -12.5 } : {}}
       transition={{ type: "tween", duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
       className={className}
       aria-label="menu toggle button"
