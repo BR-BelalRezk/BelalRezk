@@ -20,7 +20,7 @@ export default function Section({ id, children }: Props) {
   const { setActive } = useActiveSection();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, {
-    amount: 0.3,
+    amount: id === "projects" ? 0.1 : 0.3,
   });
   useEffect(() => {
     if (isInView) {
