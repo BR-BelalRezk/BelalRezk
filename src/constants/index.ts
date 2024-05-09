@@ -28,6 +28,7 @@ import { IoLogoJavascript } from "react-icons/io";
 import {
   meta,
   udemy,
+  casecobra,
   lexaz,
   littleLemon,
   canvex,
@@ -175,6 +176,12 @@ export const skills = [
 
 export const projects = [
   {
+    label: "CaseCobra",
+    desc: "Developed an E-commerce site for custom phone cases. User-friendly interface & stylish designs.",
+    demo: "https://casecobra-br.vercel.app",
+    img: casecobra,
+  },
+  {
     label: "Lexaz",
     desc: "Internal hotel management web app for desktop, serving a small boutique hotel with 8 cabins.",
     demo: "https://lexaz.vercel.app",
@@ -194,7 +201,7 @@ export const projects = [
   },
   {
     label: "MeetU",
-    desc: "Streamlined Video Conferencing with Secure, Seamless Collaboration for Individuals and Businesses.",
+    desc: "Streamlined Video Conferencing with Secure, Seamless Collaboration for Individuals & Businesses.",
     demo: "https://meetu-br.vercel.app",
     img: meetu,
   },

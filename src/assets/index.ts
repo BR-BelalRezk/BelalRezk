@@ -1,6 +1,7 @@
 import meta from "./meta.png";
 import udemy from "./udemy.jpg";
 
+import casecobra from "./casecobra.png";
 import lexaz from "./lexaz.png";
 import littleLemon from "./littleLemon.png";
 import canvex from "./canvex.png";
@@ -14,6 +15,7 @@ import hiLink from "./hiLink.png";
 export {
   meta,
   udemy,
+  casecobra,
   lexaz,
   littleLemon,
   canvex,
