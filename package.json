@@ -14,7 +14,6 @@
     "@splinetool/runtime": "^1.2.4",
     "framer-motion": "^11.1.7",
     "gsap": "^3.12.5",
-    "lenis": "^1.0.45",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
