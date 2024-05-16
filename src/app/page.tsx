@@ -3,17 +3,15 @@ import { Section } from "@/exports";
 import { navbar } from "@/constants";
 import { useEffect } from "react";
 import Lenis from "lenis";
-import gsap from "gsap";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis();
-    lenis.on("scroll", ScrollTrigger.update);
+    function raf(time: number) {
+      lenis.raf(time);
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }, []);
 
   return (
