@@ -31,7 +31,7 @@ export default function Section({ id, children }: Props) {
     <section
       ref={ref}
       id={id}
-      className={`w-full sticky flex items-center justify-center px-5 sm:px-7 md:px-10 lg:px-14 xl:px-20 ${
+      className={`w-full flex items-center justify-center px-5 sm:px-7 md:px-10 lg:px-14 xl:px-20 ${
         id !== "projects" ? "h-dvh" : "h-fit scroll-mt-40"
       }`}
     >
