@@ -1,12 +1,20 @@
 "use client";
 import { navbar } from "@/constants";
 import { useActiveSection } from "@/context/ActiveSection";
-import { useInView, motion, Variants } from "framer-motion";
+import {
+  useInView,
+  motion,
+  Variants,
+  MotionValue,
+  useTransform,
+} from "framer-motion";
 import { useEffect, useRef } from "react";
 
 type Props = {
   id: (typeof navbar)[number]["id"];
   children: Readonly<React.ReactNode>;
+  scrollYProgress: MotionValue<number>;
+  index: number;
 };
 
 const textVariants: Variants = {
@@ -16,7 +24,14 @@ const textVariants: Variants = {
   hide: { opacity: 0 },
 };
 
-export default function Section({ id, children }: Props) {
+export default function Section({
+  id,
+  children,
+  scrollYProgress,
+  index,
+}: Props) {
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
   const { setActive } = useActiveSection();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, {
@@ -28,10 +43,11 @@ export default function Section({ id, children }: Props) {
     }
   }, [isInView, id, setActive]);
   return (
-    <section
+    <motion.section
       ref={ref}
       id={id}
-      className={`w-full flex items-center justify-center px-5 sm:px-7 md:px-10 lg:px-14 xl:px-20 ${
+      style={{ top: `${index * 100 + "dvh"}`, scale, rotate }}
+      className={`w-full sticky flex items-center justify-center px-5 sm:px-7 md:px-10 lg:px-14 xl:px-20 ${
         id !== "projects" ? "h-dvh" : "h-fit scroll-mt-40"
       }`}
     >
@@ -54,6 +70,6 @@ export default function Section({ id, children }: Props) {
         )}
         {children}
       </article>
-    </section>
+    </motion.section>
   );
 }
