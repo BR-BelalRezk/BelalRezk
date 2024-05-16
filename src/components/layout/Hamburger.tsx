@@ -10,7 +10,7 @@ export default function Hamburger({ toggle }: { toggle?: boolean }) {
         <motion.span
           key={index}
           animate={index === 0 ? span_1 : span_2}
-          className="h-0.5 w-5 bg-stone-950 rounded-full"
+          className="h-0.5 w-6 bg-stone-950 rounded-full"
           transition={{ duration: 0.5, type: "tween", ease: "easeInOut" }}
         />
       ))}
