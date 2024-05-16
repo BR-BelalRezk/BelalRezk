@@ -4,7 +4,7 @@ import Hamburger from "./Hamburger";
 export default function MobileNav() {
   return (
     <Menu id="mobile">
-      <MenuToggleButton className="relative flex items-center justify-center flex-col gap-1 h-10 w-10 rounded-full z-40">
+      <MenuToggleButton className="relative flex items-center justify-center flex-col gap-1 h-10 w-10 z-40">
         <Hamburger />
       </MenuToggleButton>
       <MenuList
