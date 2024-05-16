@@ -17,7 +17,7 @@ import Active from "./Active";
 type TMenuContext = {
   toggle: boolean;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
-
+  id: "mobile" | "desktop";
 };
 
 const MenuContext = createContext<TMenuContext | null | undefined>(
@@ -45,8 +45,18 @@ const Menu = ({
       setToggle(true);
     }
   }, [id]);
-  const value = { toggle, setToggle };
-  return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;
+  const value = { toggle, setToggle, id };
+  return (
+    <MenuContext.Provider value={value}>
+      <div
+        className={
+          id === "desktop" ? "hidden lg:block relative" : "relative lg:hidden"
+        }
+      >
+        {children}
+      </div>
+    </MenuContext.Provider>
+  );
 };
 
 const MenuToggleButton = ({
@@ -59,7 +69,7 @@ const MenuToggleButton = ({
   const { toggle, setToggle } = useMenu();
   return (
     <motion.button
-      animate={toggle ? { translateY: 5, translateX: -5 } : {}}
+      animate={toggle ? { translateY: 15, translateX: -15 } : {}}
       transition={{ type: "tween", duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
       className={className}
       aria-label="menu toggle button"
@@ -96,14 +106,13 @@ const MenuListItem = ({
   children,
   className,
   label,
-  layoutId
 }: {
   children: Readonly<React.ReactNode>;
   className: string;
   label: (typeof navbar)[number]["id"];
-  layoutId : 'mobile' | 'desktop'
 }) => {
   const { active, setActive } = useActiveSection();
+  const { id } = useMenu();
   return (
     <motion.li
       onClick={() => setActive(label)}
@@ -126,7 +135,7 @@ const MenuListItem = ({
         {children}
         {active === label && (
           <Active
-            layoutId={layoutId}
+            layoutId={id}
             className="h-3 w-3 rounded-full bg-stone-500 lg:h-auto lg:w-auto lg:bg-stone-700 lg:absolute lg:inset-0 lg:-z-50"
           />
         )}

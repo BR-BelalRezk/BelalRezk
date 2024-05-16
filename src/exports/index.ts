@@ -47,7 +47,7 @@ export {
   ActiveSection,
   Carousel,
   Magnetic,
-  Section,
   About,
+  Section,
   Projects,
 };
