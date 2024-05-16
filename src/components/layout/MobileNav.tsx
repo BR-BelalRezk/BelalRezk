@@ -32,7 +32,7 @@ export default function MobileNav() {
             },
           },
         }}
-        className="p-5 font-semibold gap-3 top-0 right-0 bg-stone-100 absolute capitalize flex items-start justify-center flex-col text-stone-900"
+        className="p-5 text-xl font-semibold gap-3 top-0 right-0 bg-stone-100 absolute capitalize flex items-start justify-center flex-col text-stone-900"
       >
         {navbar.map((item) => (
           <MenuListItem
