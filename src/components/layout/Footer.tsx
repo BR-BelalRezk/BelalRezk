@@ -21,7 +21,7 @@ export default function Footer() {
       <pre className="text-center text-stone-300 text-sm">
         Copyright&copy; {new Date().getFullYear()} BelalRezk.
         <br />
-        All rights reserved
+        All rights reserved.
       </pre>
     </footer>
   );
