@@ -40,10 +40,11 @@ import {
   hiLink,
 } from "../assets";
 
-import { About, Projects } from "@/exports";
+import { About } from "@/exports";
 import Home from "@/components/content/home/Home";
 import Certificates from "@/components/content/Certificates";
 import Skills from "@/components/content/Skills";
+import Projects from "@/components/content/projects/Projects";
 
 export const navbar = [
   { id: "home", element: Home },

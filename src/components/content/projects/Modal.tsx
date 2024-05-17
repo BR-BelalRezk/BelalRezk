@@ -2,6 +2,8 @@ import { Variants, motion } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { HiOutlineExternalLink } from "react-icons/hi";
+
 const scaleVariants: Variants = {
   open: {
     scale: 1,
@@ -17,13 +19,11 @@ const scaleVariants: Variants = {
   },
 };
 export default function Modal({
-  active,
   children,
-  icon,
+  modal,
 }: {
-  active: boolean;
   children: Readonly<React.ReactNode>;
-  icon: JSX.Element;
+  modal: { active: boolean; index: number };
 }) {
   const modalRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -57,20 +57,28 @@ export default function Modal({
       <motion.div
         ref={modalRef}
         variants={scaleVariants}
-        animate={active ? "open" : "close"}
+        animate={modal.active ? "open" : "close"}
         initial="close"
         className="h-52 w-80  items-center justify-center absolute overflow-hidden pointer-events-none hidden sm:flex"
       >
-        {children}
+        <div
+          className="w-full h-full absolute"
+          style={{
+            top: modal.index * -100 + "%",
+            transition: "top 0.5s cubic-bezier(0.76 , 0 , 0.24 , 1)",
+          }}
+        >
+          {children}
+        </div>
       </motion.div>
       <motion.div
         ref={cursorRef}
         variants={scaleVariants}
-        animate={active ? "open" : "close"}
+        animate={modal.active ? "open" : "close"}
         initial="close"
         className="p-2.5 bg-stone-500 absolute rounded-full flex items-center justify-center pointer-events-none"
       >
-        {icon}
+        <HiOutlineExternalLink />
       </motion.div>
     </>
   );

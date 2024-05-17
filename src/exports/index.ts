@@ -18,6 +18,9 @@ const ActiveSection = dynamic(() => import("@/context/ActiveSection"));
 const Carousel = dynamic(() => import("@/components/shared/Carousel"));
 const Magnetic = dynamic(() => import("@/components/shared/Magnetic"));
 const Section = dynamic(() => import("@/components/shared/Section"));
+const ProjectContent = dynamic(
+  () => import("@/components/content/projects/ProjectContent")
+);
 
 const SplineCubes = dynamic(
   () => import("@/components/content/home/SplineCubes"),
@@ -31,9 +34,6 @@ const PRE = dynamic(() =>
 );
 const HeroP = dynamic(() =>
   import("@/components/content/home/Hero").then((module) => module.HeroP)
-);
-const Projects = dynamic(
-  () => import("@/components/content/projects/Projects")
 );
 export {
   Menu,
@@ -49,5 +49,5 @@ export {
   Magnetic,
   About,
   Section,
-  Projects,
+  ProjectContent,
 };
