@@ -1,12 +1,12 @@
 "use client";
 import { navbar } from "@/constants";
-import { SetStateAction, createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 type TActiveSection = (typeof navbar)[number]["id"];
 
 type TActiveSectionContext = {
   active: TActiveSection;
-  setActive: React.Dispatch<SetStateAction<TActiveSection>>;
+  setActive: React.Dispatch<React.SetStateAction<TActiveSection>>;
 };
 const ActiveSectionContext = createContext<
   TActiveSectionContext | null | undefined

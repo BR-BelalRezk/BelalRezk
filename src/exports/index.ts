@@ -1,5 +1,23 @@
 import dynamic from "next/dynamic";
 
+const SplineCubes = dynamic(
+  () =>
+    import("@/components/content/home/Hero").then(
+      (module) => module.SplineCubes
+    ),
+  { ssr: false }
+);
+
+const H1 = dynamic(() =>
+  import("@/components/content/home/Hero").then((module) => module.H1)
+);
+const PRE = dynamic(() =>
+  import("@/components/content/home/Hero").then((module) => module.PRE)
+);
+const HeroP = dynamic(() =>
+  import("@/components/content/home/Hero").then((module) => module.HeroP)
+);
+
 const Menu = dynamic(() =>
   import("@/components/layout/Menu").then((module) => module.Menu)
 );
@@ -13,29 +31,20 @@ const MenuListItem = dynamic(() =>
   import("@/components/layout/Menu").then((module) => module.MenuListItem)
 );
 
-const About = dynamic(() => import("@/components/content/About"));
 const ActiveSection = dynamic(() => import("@/context/ActiveSection"));
+const ActiveProject = dynamic(() => import("@/context/ActiveProject"));
+
+const About = dynamic(() => import("@/components/content/About"));
+const Project = dynamic(() => import("@/components/content/projects/Project"));
+const Modal = dynamic(() => import("@/components/content/projects/Modal"));
+
 const Carousel = dynamic(() => import("@/components/shared/Carousel"));
 const Magnetic = dynamic(() => import("@/components/shared/Magnetic"));
 const Section = dynamic(() => import("@/components/shared/Section"));
-const ProjectContent = dynamic(
-  () => import("@/components/content/projects/ProjectContent")
-);
 
-const SplineCubes = dynamic(
-  () => import("@/components/content/home/SplineCubes"),
-  { ssr: false }
-);
-const H1 = dynamic(() =>
-  import("@/components/content/home/Hero").then((module) => module.H1)
-);
-const PRE = dynamic(() =>
-  import("@/components/content/home/Hero").then((module) => module.PRE)
-);
-const HeroP = dynamic(() =>
-  import("@/components/content/home/Hero").then((module) => module.HeroP)
-);
 export {
+  Project,
+  Modal,
   Menu,
   MenuToggleButton,
   MenuList,
@@ -49,5 +58,5 @@ export {
   Magnetic,
   About,
   Section,
-  ProjectContent,
+  ActiveProject,
 };

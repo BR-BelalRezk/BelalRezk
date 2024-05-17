@@ -1,8 +1,10 @@
+"use client";
 import { Variants, motion } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { HiOutlineExternalLink } from "react-icons/hi";
+import { useActiveProject } from "@/context/ActiveProject";
 
 const scaleVariants: Variants = {
   open: {
@@ -20,11 +22,10 @@ const scaleVariants: Variants = {
 };
 export default function Modal({
   children,
-  modal,
 }: {
   children: Readonly<React.ReactNode>;
-  modal: { active: boolean; index: number };
 }) {
+  const { modal } = useActiveProject();
   const modalRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
